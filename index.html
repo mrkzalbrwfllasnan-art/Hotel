@@ -35,7 +35,7 @@
   @media(max-width:760px){.links a.hide-m{display:none}.nav{padding:12px 16px}.logo{font-size:18px}}
 
   /* ============ HERO ============ */
-  .hero{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;overflow:hidden;background:var(--navy)}
+  .hero{position:relative;height:90vh;height:90svh;min-height:460px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;overflow:hidden;background:var(--navy)}
   .hero-bg{position:absolute;inset:0;z-index:0;background:linear-gradient(120deg,#0a1f33,#16507a,#a8612f,#0a1f33);background-size:300% 300%;animation:bgmove 14s ease-in-out infinite}
   @keyframes bgmove{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
   .orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.45;animation:float 9s ease-in-out infinite}
@@ -43,7 +43,10 @@
   .orb.o2{width:420px;height:420px;background:#2a8fbd;bottom:6%;inset-inline-end:6%;animation-delay:-4s}
   @keyframes float{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-40px) scale(1.12)}}
 
-  .hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+  .hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;background:#000}
+  @media(max-width:760px){.hero{height:78vh;height:78svh}}
+  @media(max-width:760px) and (orientation:landscape){.hero{height:100vh;height:100svh}}
+  @media(min-width:1500px){.hero{height:86vh}}
   .hero::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(to top,rgba(6,18,30,.85) 0%,rgba(6,18,30,.25) 55%,rgba(6,18,30,.45) 100%)}
 
   .plane{position:absolute;z-index:3;top:20%;left:0;display:flex;align-items:center;direction:ltr;animation:fly 16s linear infinite;pointer-events:none}
@@ -51,7 +54,7 @@
   .plane span{display:block;width:220px;height:3px;background:linear-gradient(to right,rgba(255,255,255,.8),rgba(255,255,255,0));border-radius:3px}
   @keyframes fly{0%{transform:translateX(110vw) translateY(40px)}100%{transform:translateX(-340px) translateY(-30px)}}
 
-  .hero-inner{position:relative;z-index:4;width:100%;max-width:1120px;margin:0 auto;padding:130px 24px 36px}
+  .hero-inner{position:relative;z-index:4;width:100%;max-width:1120px;margin:0 auto;padding:110px 24px 28px}
   .badge{display:inline-block;padding:6px 18px;border:1px solid rgba(240,196,110,.7);color:var(--gold2);border-radius:50px;font-weight:700;margin-bottom:18px;animation:rise .9s .1s both}
   .hero h1{font-family:var(--head);font-weight:700;font-size:clamp(44px,9.5vw,112px);line-height:1.2;margin:0 0 6px}
   .hero h1 .w{display:inline-block;animation:rise .9s both}
@@ -63,19 +66,25 @@
   .hero p.lead{font-size:clamp(18px,2.4vw,25px);max-width:36ch;margin:0 0 30px;color:#eaf1f4;animation:rise .9s 1.2s both}
 
   /* booking bar */
-  .bar{background:rgba(255,255,255,.96);color:var(--ink);border-radius:18px;padding:18px;display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr .8fr auto;gap:12px;align-items:end;box-shadow:0 24px 60px rgba(0,0,0,.4);animation:rise .9s 1.5s both}
+  .bar{background:rgba(255,255,255,.96);color:var(--ink);border-radius:18px;padding:18px;display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr .8fr auto;gap:12px;align-items:end;box-shadow:none;border:1px solid var(--line);background:#fff}
   .bar label{display:block;font-weight:700;font-size:14px;margin-bottom:4px;color:var(--navy2)}
   .bar input,.bar select{width:100%;font:400 16px var(--body);padding:12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
   .bar input:focus,.bar select:focus{outline:2px solid var(--gold);border-color:var(--gold)}
   .bar .btn{height:48px;padding-inline:28px}
   @media(max-width:980px){.bar{grid-template-columns:1fr 1fr}.bar .btn{grid-column:1/-1;width:100%}}
   @media(max-width:480px){.bar{grid-template-columns:1fr}}
-  #result{display:none;margin-top:14px;padding:14px 18px;border-radius:12px;background:rgba(255,255,255,.95);color:var(--ink);border-inline-start:5px solid var(--gold);white-space:pre-line}
+  #result{display:none;margin-top:16px;padding:14px 18px;border-radius:12px;background:#fff7e3;color:var(--ink);border-inline-start:5px solid var(--gold);white-space:pre-line}
   #result.show{display:block;animation:rise .5s both}
-  .scroll{display:flex;justify-content:center;margin-top:22px}
+  .scroll{display:flex;justify-content:center;margin-top:18px;text-decoration:none}
   .scroll i{width:26px;height:42px;border:2px solid rgba(255,255,255,.7);border-radius:20px;position:relative}
   .scroll i::after{content:"";position:absolute;top:8px;left:50%;width:4px;height:8px;margin-left:-2px;background:#fff;border-radius:4px;animation:wheel 1.6s infinite}
   @keyframes wheel{0%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(16px)}}
+
+  .booking{background:linear-gradient(to bottom,var(--navy),var(--navy2));padding:44px 20px 52px}
+  .book-card{max-width:1120px;margin:0 auto}
+  .book-card h2{font-family:var(--head);color:#fff;font-size:clamp(28px,4.5vw,42px);margin:0 0 4px}
+  .book-card>p{color:#b8c9d4;margin:0 0 20px}
+  .book-card #result{margin-bottom:0}
 
   /* ============ SECTIONS ============ */
   .wrap{max-width:1120px;margin:0 auto;padding:96px 24px}
@@ -153,7 +162,7 @@
 <header class="hero" id="top">
   <div class="hero-bg"><div class="orb o1"></div><div class="orb o2"></div></div>
 
-  <video id="bg" autoplay muted loop playsinline preload="auto" src="video.mp4"></video>
+  <video id="bg" autoplay muted loop playsinline webkit-playsinline preload="auto" disablepictureinpicture controlslist="nodownload noplaybackrate" src="video.mp4"></video>
 
   <div class="plane" aria-hidden="true">
     <svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
@@ -166,7 +175,15 @@
     <div class="line"></div>
     <p class="lead">إقامة مريحة قريبة من المطار، لراحة المسافر وهدوء الضيف.</p>
 
-    <form class="bar" id="book" novalidate>
+    <a class="scroll" href="#book" aria-label="انزل للحجز"><i></i></a>
+  </div>
+</header>
+
+<section class="booking" id="book">
+  <div class="book-card reveal">
+    <h2>احجز غرفتك</h2>
+    <p>املأ البيانات وسنؤكد لك الحجز في أقرب وقت.</p>
+    <form class="bar" id="bookForm" novalidate>
       <div><label for="name">الاسم</label><input id="name" autocomplete="name" placeholder="اسمك الكريم"></div>
       <div><label for="in">الوصول</label><input id="in" type="date"></div>
       <div><label for="out">المغادرة</label><input id="out" type="date"></div>
@@ -176,9 +193,8 @@
       <button class="btn" type="submit">احجز</button>
     </form>
     <div id="result" role="status" aria-live="polite"></div>
-    <div class="scroll"><i></i></div>
   </div>
-</header>
+</section>
 
 <section id="rooms"><div class="wrap">
   <div class="title reveal"><small>الإقامة</small><h2>غرفنا</h2><p>ثلاثة خيارات للإقامة، لرحلة قصيرة أو إقامة أطول.</p></div>
@@ -252,11 +268,21 @@ if (HOTEL.whatsapp) {
 
 /* ===== الفيديو: يحاول التشغيل، وإن فشل تبقى الخلفية المتحركة ===== */
 var v = document.getElementById("bg");
-v.muted = true;
+v.muted = true; v.defaultMuted = true; v.setAttribute("muted","");
+/* موبايل بالطول: لو عندك فيديو عمودي باسم video-mobile.mp4 يُستخدم تلقائياً، وإلا يُستخدم video.mp4 */
+if (window.innerWidth < 760 && window.innerHeight > window.innerWidth) {
+  var mobileTried = false;
+  v.addEventListener("error", function fb(){
+    if (!mobileTried) return;
+    mobileTried = false; v.removeEventListener("error", fb); v.src = "video.mp4"; v.load(); tryPlay();
+  });
+  mobileTried = true; v.src = "video-mobile.mp4"; v.load();
+}
 function tryPlay(){ var p = v.play(); if (p && p.catch) p.catch(function(){}); }
 tryPlay();
-v.addEventListener("error", function(){ v.style.display = "none"; });
+v.addEventListener("error", function(){ if (v.getAttribute("src") === "video.mp4") v.style.display = "none"; });
 document.addEventListener("touchstart", tryPlay, {once:true});
+document.addEventListener("visibilitychange", function(){ if (!document.hidden) tryPlay(); });
 document.addEventListener("click", tryPlay, {once:true});
 
 /* ===== القائمة تتغير عند النزول ===== */
@@ -274,7 +300,7 @@ if ("IntersectionObserver" in window) {
 } else { items.forEach(function(el){ el.classList.add("in"); }); }
 
 /* ===== الحجز ===== */
-var f = document.getElementById("book"), res = document.getElementById("result");
+var f = document.getElementById("bookForm"), res = document.getElementById("result");
 var today = new Date().toISOString().slice(0,10);
 document.getElementById("in").min = today; document.getElementById("out").min = today;
 f.addEventListener("submit", function(e){
