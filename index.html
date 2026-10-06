@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>فندق حي المطار السياحي</title>
-<meta name="description" content="فندق حي المطار السياحي — إقامة مريحة قريبة من المطار. احجز غرفتك الآن.">
+<meta name="description" content="فندق حي المطار السياحي — إقامة مريحة قريبة من المطار. Airport District Tourist Hotel.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=Tajawal:wght@400;500;700;800&family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy:#0a1f33; --navy2:#12304d; --gold:#d9a441; --gold2:#f0c46e;
@@ -15,24 +15,30 @@
     --head:"Reem Kufi","Tajawal","Segoe UI",Tahoma,sans-serif;
     --body:"Tajawal","Segoe UI",Tahoma,Arial,sans-serif;
   }
+  html[lang="en"]{
+    --head:"Playfair Display",Georgia,"Times New Roman",serif;
+    --body:"Poppins","Segoe UI",Arial,sans-serif;
+  }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{margin:0;font-family:var(--body);color:var(--ink);background:var(--cream);line-height:1.8;font-size:17px;overflow-x:hidden}
   a{color:inherit}
-  img,svg{max-width:100%}
 
   /* ============ NAV ============ */
-  .nav{position:fixed;top:0;inset-inline:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 28px;color:#fff;transition:background .35s,padding .35s,box-shadow .35s}
-  .nav.scrolled{background:rgba(10,31,51,.94);backdrop-filter:blur(8px);padding:10px 28px;box-shadow:0 6px 24px rgba(0,0,0,.25)}
-  .logo{font-family:var(--head);font-weight:700;font-size:22px;text-decoration:none;display:flex;align-items:center;gap:10px}
-  .logo i{width:38px;height:38px;border-radius:50%;background:var(--gold);color:var(--navy);display:grid;place-items:center;font-style:normal;font-size:20px}
-  .links{display:flex;align-items:center;gap:26px}
-  .links a{text-decoration:none;font-weight:500;position:relative;padding:4px 0}
+  .nav{position:fixed;top:0;inset-inline:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 28px;color:#fff;transition:background .35s,padding .35s,box-shadow .35s}
+  .nav.scrolled{background:rgba(10,31,51,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:10px 28px;box-shadow:0 6px 24px rgba(0,0,0,.25)}
+  .logo{font-family:var(--head);font-weight:700;font-size:22px;text-decoration:none;display:flex;align-items:center;gap:10px;line-height:1.2}
+  .logo i{flex:none;width:38px;height:38px;border-radius:50%;background:var(--gold);color:var(--navy);display:grid;place-items:center;font-style:normal;font-size:20px}
+  .links{display:flex;align-items:center;gap:24px}
+  .links a{text-decoration:none;font-weight:500;position:relative;padding:4px 0;white-space:nowrap}
   .links a:not(.btn)::after{content:"";position:absolute;bottom:-2px;inset-inline-start:0;width:0;height:2px;background:var(--gold);transition:width .3s}
   .links a:not(.btn):hover::after{width:100%}
-  .btn{display:inline-block;border:0;cursor:pointer;text-decoration:none;font:700 16px/1 var(--body);padding:14px 26px;border-radius:50px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#2a1d04;box-shadow:0 8px 22px rgba(217,164,65,.38);transition:transform .25s,box-shadow .25s}
+  .lang{cursor:pointer;font:700 14px/1 var(--body);color:#fff;background:transparent;border:1.5px solid rgba(255,255,255,.7);border-radius:50px;padding:9px 16px;transition:background .25s,color .25s}
+  .lang:hover{background:#fff;color:var(--navy)}
+  .btn{display:inline-block;border:0;cursor:pointer;text-decoration:none;font:700 16px/1 var(--body);padding:14px 26px;border-radius:50px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#2a1d04;box-shadow:0 8px 22px rgba(217,164,65,.38);transition:transform .25s,box-shadow .25s;white-space:nowrap}
   .btn:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(217,164,65,.5)}
-  @media(max-width:760px){.links a.hide-m{display:none}.nav{padding:12px 16px}.logo{font-size:18px}}
+  @media(max-width:860px){.links a.hide-m{display:none}.links{gap:10px}}
+  @media(max-width:600px){.nav{padding:10px 12px}.nav.scrolled{padding:8px 12px}.logo{font-size:15px;gap:8px}.logo i{width:32px;height:32px;font-size:16px}.btn{padding:11px 16px;font-size:14px}.lang{padding:8px 12px}}
 
   /* ============ HERO ============ */
   .hero{position:relative;height:90vh;height:90svh;min-height:460px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;overflow:hidden;background:var(--navy)}
@@ -57,34 +63,33 @@
   .hero-inner{position:relative;z-index:4;width:100%;max-width:1120px;margin:0 auto;padding:110px 24px 28px}
   .badge{display:inline-block;padding:6px 18px;border:1px solid rgba(240,196,110,.7);color:var(--gold2);border-radius:50px;font-weight:700;margin-bottom:18px;animation:rise .9s .1s both}
   .hero h1{font-family:var(--head);font-weight:700;font-size:clamp(44px,9.5vw,112px);line-height:1.2;margin:0 0 6px}
+  html[lang="en"] .hero h1{font-size:clamp(36px,7.4vw,92px);line-height:1.15}
   .hero h1 .w{display:inline-block;animation:rise .9s both}
   .hero h1 .w:nth-child(1){animation-delay:.25s}.hero h1 .w:nth-child(2){animation-delay:.45s}
   .hero h1 .w:nth-child(3){animation-delay:.65s;color:var(--gold2)}.hero h1 .w:nth-child(4){animation-delay:.85s;color:var(--gold2)}
   @keyframes rise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
   .line{height:4px;width:0;background:var(--gold);border-radius:4px;margin:10px 0 18px;animation:grow 1.2s 1.1s forwards}
   @keyframes grow{to{width:140px}}
-  .hero p.lead{font-size:clamp(18px,2.4vw,25px);max-width:36ch;margin:0 0 30px;color:#eaf1f4;animation:rise .9s 1.2s both}
+  .hero p.lead{font-size:clamp(18px,2.4vw,25px);max-width:36ch;margin:0 0 20px;color:#eaf1f4;animation:rise .9s 1.2s both}
+  .scroll{display:flex;justify-content:center;margin-top:10px;text-decoration:none}
+  .scroll i{width:26px;height:42px;border:2px solid rgba(255,255,255,.7);border-radius:20px;position:relative}
+  .scroll i::after{content:"";position:absolute;top:8px;left:50%;width:4px;height:8px;margin-left:-2px;background:#fff;border-radius:4px;animation:wheel 1.6s infinite}
+  @keyframes wheel{0%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(16px)}}
 
-  /* booking bar */
-  .bar{background:rgba(255,255,255,.96);color:var(--ink);border-radius:18px;padding:18px;display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr .8fr auto;gap:12px;align-items:end;box-shadow:none;border:1px solid var(--line);background:#fff}
+  /* ============ BOOKING (under the video) ============ */
+  .booking{background:linear-gradient(to bottom,var(--navy),var(--navy2));padding:44px 20px 52px}
+  .book-card{max-width:1120px;margin:0 auto}
+  .book-card h2{font-family:var(--head);color:#fff;font-size:clamp(28px,4.5vw,42px);margin:0 0 4px}
+  .book-card>p{color:#b8c9d4;margin:0 0 20px}
+  .bar{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:18px;padding:18px;display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr .8fr auto;gap:12px;align-items:end}
   .bar label{display:block;font-weight:700;font-size:14px;margin-bottom:4px;color:var(--navy2)}
-  .bar input,.bar select{width:100%;font:400 16px var(--body);padding:12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+  .bar input,.bar select{width:100%;font:400 16px var(--body);padding:12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);min-height:48px}
   .bar input:focus,.bar select:focus{outline:2px solid var(--gold);border-color:var(--gold)}
   .bar .btn{height:48px;padding-inline:28px}
   @media(max-width:980px){.bar{grid-template-columns:1fr 1fr}.bar .btn{grid-column:1/-1;width:100%}}
   @media(max-width:480px){.bar{grid-template-columns:1fr}}
   #result{display:none;margin-top:16px;padding:14px 18px;border-radius:12px;background:#fff7e3;color:var(--ink);border-inline-start:5px solid var(--gold);white-space:pre-line}
   #result.show{display:block;animation:rise .5s both}
-  .scroll{display:flex;justify-content:center;margin-top:18px;text-decoration:none}
-  .scroll i{width:26px;height:42px;border:2px solid rgba(255,255,255,.7);border-radius:20px;position:relative}
-  .scroll i::after{content:"";position:absolute;top:8px;left:50%;width:4px;height:8px;margin-left:-2px;background:#fff;border-radius:4px;animation:wheel 1.6s infinite}
-  @keyframes wheel{0%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(16px)}}
-
-  .booking{background:linear-gradient(to bottom,var(--navy),var(--navy2));padding:44px 20px 52px}
-  .book-card{max-width:1120px;margin:0 auto}
-  .book-card h2{font-family:var(--head);color:#fff;font-size:clamp(28px,4.5vw,42px);margin:0 0 4px}
-  .book-card>p{color:#b8c9d4;margin:0 0 20px}
-  .book-card #result{margin-bottom:0}
 
   /* ============ SECTIONS ============ */
   .wrap{max-width:1120px;margin:0 auto;padding:96px 24px}
@@ -98,7 +103,6 @@
   .js .reveal.in{opacity:1;transform:none}
   .d1{transition-delay:.12s!important}.d2{transition-delay:.24s!important}.d3{transition-delay:.36s!important}
 
-  /* rooms */
   .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:28px}
   .room{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 10px 32px rgba(10,31,51,.1);transition:transform .35s,box-shadow .35s}
   .room:hover{transform:translateY(-10px);box-shadow:0 24px 50px rgba(10,31,51,.2)}
@@ -112,11 +116,10 @@
   .room .who{color:var(--gold);font-weight:800}
   .room p{color:var(--muted);margin:10px 0 14px}
   .room ul{list-style:none;padding:0;margin:0 0 18px}
-  .room li{padding:6px 0 6px 0;border-bottom:1px dashed var(--line)}
+  .room li{padding:6px 0;border-bottom:1px dashed var(--line)}
   .room li::before{content:"✓";color:var(--gold);font-weight:800;margin-inline-end:8px}
   .room .btn{padding:12px 22px}
 
-  /* services */
   .dark{background:linear-gradient(160deg,var(--navy),var(--navy2));color:#fff}
   .dark .title h2{color:#fff}.dark .title p{color:#b8c9d4}
   .feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
@@ -128,16 +131,14 @@
   .f h3{font-family:var(--head);font-size:23px;margin:0 0 4px}
   .f p{margin:0;color:#b8c9d4;font-size:16px}
 
-  /* contact */
   .contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
   .c{background:#fff;border-radius:18px;padding:28px 22px;text-align:center;box-shadow:0 8px 26px rgba(10,31,51,.08);transition:transform .3s}
   .c:hover{transform:translateY(-6px)}
   .c b{display:block;font-family:var(--head);font-size:22px;color:var(--navy);margin-bottom:4px}
-  .c span{color:var(--muted);direction:ltr;unicode-bidi:plaintext}
+  .c span{color:var(--muted);unicode-bidi:plaintext}
 
   footer{background:#06121e;color:#9db2bd;text-align:center;padding:28px 20px;font-size:15px}
 
-  /* whatsapp floating */
   .wa{position:fixed;bottom:22px;inset-inline-start:22px;z-index:60;width:60px;height:60px;border-radius:50%;background:#25d366;display:none;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.35);animation:pulse 2s infinite}
   .wa.on{display:grid}
   .wa svg{width:32px;height:32px;fill:#fff}
@@ -147,18 +148,19 @@
 <body>
 
 <nav class="nav" id="nav">
-  <a class="logo" href="#top"><i>✈</i> فندق حي المطار السياحي</a>
+  <a class="logo" href="#top"><i>✈</i><span data-i18n="brand">فندق حي المطار السياحي</span></a>
   <div class="links">
-    <a class="hide-m" href="#rooms">الغرف</a>
-    <a class="hide-m" href="#services">الخدمات</a>
-    <a class="hide-m" href="#contact">تواصل معنا</a>
-    <a class="btn" href="#book">احجز الآن</a>
+    <a class="hide-m" href="#rooms" data-i18n="nav_rooms">الغرف</a>
+    <a class="hide-m" href="#services" data-i18n="nav_services">الخدمات</a>
+    <a class="hide-m" href="#contact" data-i18n="nav_contact">تواصل معنا</a>
+    <button class="lang" id="langBtn" type="button" aria-label="Language">EN</button>
+    <a class="btn" href="#book" data-i18n="nav_book">احجز الآن</a>
   </div>
 </nav>
 
-<!-- ================= HERO + فيديو الخلفية =================
+<!-- ================= الواجهة + فيديو الخلفية =================
      ضع ملف الفيديو بنفس مجلد هذا الملف واسمه:  video.mp4
-     (يتغير الاسم من هنا لو احتجت: src="video.mp4")                    -->
+     Put your background video next to this file and name it:  video.mp4 -->
 <header class="hero" id="top">
   <div class="hero-bg"><div class="orb o1"></div><div class="orb o2"></div></div>
 
@@ -170,155 +172,250 @@
   </div>
 
   <div class="hero-inner">
-    <div class="badge">أهلاً بك في ضيافتنا</div>
-    <h1><span class="w">فندق</span> <span class="w">حي</span> <span class="w">المطار</span> <span class="w">السياحي</span></h1>
+    <div class="badge" data-i18n="badge">أهلاً بك في ضيافتنا</div>
+    <h1 id="h1"><span class="w">فندق</span> <span class="w">حي</span> <span class="w">المطار</span> <span class="w">السياحي</span></h1>
     <div class="line"></div>
-    <p class="lead">إقامة مريحة قريبة من المطار، لراحة المسافر وهدوء الضيف.</p>
-
-    <a class="scroll" href="#book" aria-label="انزل للحجز"><i></i></a>
+    <p class="lead" data-i18n="lead">إقامة مريحة قريبة من المطار، لراحة المسافر وهدوء الضيف.</p>
+    <a class="scroll" href="#book" aria-label="Book"><i></i></a>
   </div>
 </header>
 
+<!-- ================= الحجز تحت الفيديو ================= -->
 <section class="booking" id="book">
   <div class="book-card reveal">
-    <h2>احجز غرفتك</h2>
-    <p>املأ البيانات وسنؤكد لك الحجز في أقرب وقت.</p>
+    <h2 data-i18n="book_title">احجز غرفتك</h2>
+    <p data-i18n="book_sub">املأ البيانات وسنؤكد لك الحجز في أقرب وقت.</p>
     <form class="bar" id="bookForm" novalidate>
-      <div><label for="name">الاسم</label><input id="name" autocomplete="name" placeholder="اسمك الكريم"></div>
-      <div><label for="in">الوصول</label><input id="in" type="date"></div>
-      <div><label for="out">المغادرة</label><input id="out" type="date"></div>
-      <div><label for="room">نوع الغرفة</label>
-        <select id="room"><option>غرفة فردية</option><option>غرفة مزدوجة</option><option>جناح عائلي</option></select></div>
-      <div><label for="guests">الأشخاص</label><input id="guests" type="number" min="1" max="10" value="1"></div>
-      <button class="btn" type="submit">احجز</button>
+      <div><label for="name" data-i18n="lbl_name">الاسم</label><input id="name" autocomplete="name" data-ph="ph_name" placeholder="اسمك الكريم"></div>
+      <div><label for="in" data-i18n="lbl_in">الوصول</label><input id="in" type="date"></div>
+      <div><label for="out" data-i18n="lbl_out">المغادرة</label><input id="out" type="date"></div>
+      <div><label for="room" data-i18n="lbl_room">نوع الغرفة</label>
+        <select id="room"><option data-i18n="r1">غرفة فردية</option><option data-i18n="r2">غرفة مزدوجة</option><option data-i18n="r3">جناح عائلي</option></select></div>
+      <div><label for="guests" data-i18n="lbl_guests">الأشخاص</label><input id="guests" type="number" min="1" max="10" value="1"></div>
+      <button class="btn" type="submit" data-i18n="btn_book">احجز</button>
     </form>
     <div id="result" role="status" aria-live="polite"></div>
   </div>
 </section>
 
 <section id="rooms"><div class="wrap">
-  <div class="title reveal"><small>الإقامة</small><h2>غرفنا</h2><p>ثلاثة خيارات للإقامة، لرحلة قصيرة أو إقامة أطول.</p></div>
+  <div class="title reveal"><small data-i18n="rooms_small">الإقامة</small><h2 data-i18n="rooms_h">غرفنا</h2><p data-i18n="rooms_p">ثلاثة خيارات للإقامة، لرحلة قصيرة أو إقامة أطول.</p></div>
   <div class="grid3">
     <article class="room reveal">
       <div class="pic p1"><svg viewBox="0 0 24 24"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></svg></div>
-      <div class="body"><h3>غرفة فردية</h3><span class="who">لشخص واحد</span>
-        <p>غرفة هادئة ومرتبة لمن يسافر وحده أو يمرّ بالمدينة في عمل.</p>
-        <ul><li>سرير مفرد</li><li>تكييف</li><li>حمّام خاص</li></ul>
-        <a class="btn" href="#book">احجز</a></div>
+      <div class="body"><h3 data-i18n="r1">غرفة فردية</h3><span class="who" data-i18n="r1_who">لشخص واحد</span>
+        <p data-i18n="r1_d">غرفة هادئة ومرتبة لمن يسافر وحده أو يمرّ بالمدينة في عمل.</p>
+        <ul><li data-i18n="r1_a">سرير مفرد</li><li data-i18n="ac">تكييف</li><li data-i18n="bath">حمّام خاص</li></ul>
+        <a class="btn" href="#book" data-i18n="btn_book">احجز</a></div>
     </article>
     <article class="room reveal d1">
       <div class="pic p2"><svg viewBox="0 0 24 24"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></svg></div>
-      <div class="body"><h3>غرفة مزدوجة</h3><span class="who">لشخصين</span>
-        <p>مساحة أوسع لشخصين، بسرير مزدوج أو سريرين منفصلين.</p>
-        <ul><li>سرير مزدوج أو سريران</li><li>تكييف</li><li>حمّام خاص</li></ul>
-        <a class="btn" href="#book">احجز</a></div>
+      <div class="body"><h3 data-i18n="r2">غرفة مزدوجة</h3><span class="who" data-i18n="r2_who">لشخصين</span>
+        <p data-i18n="r2_d">مساحة أوسع لشخصين، بسرير مزدوج أو سريرين منفصلين.</p>
+        <ul><li data-i18n="r2_a">سرير مزدوج أو سريران</li><li data-i18n="ac">تكييف</li><li data-i18n="bath">حمّام خاص</li></ul>
+        <a class="btn" href="#book" data-i18n="btn_book">احجز</a></div>
     </article>
     <article class="room reveal d2">
       <div class="pic p3"><svg viewBox="0 0 24 24"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></svg></div>
-      <div class="body"><h3>جناح عائلي</h3><span class="who">للعائلات والمجموعات</span>
-        <p>غرفة نوم وصالة صغيرة تكفي العائلة وتحفظ خصوصيتها.</p>
-        <ul><li>غرفة نوم وصالة</li><li>تكييف</li><li>حمّام خاص</li></ul>
-        <a class="btn" href="#book">احجز</a></div>
+      <div class="body"><h3 data-i18n="r3">جناح عائلي</h3><span class="who" data-i18n="r3_who">للعائلات والمجموعات</span>
+        <p data-i18n="r3_d">غرفة نوم وصالة صغيرة تكفي العائلة وتحفظ خصوصيتها.</p>
+        <ul><li data-i18n="r3_a">غرفة نوم وصالة</li><li data-i18n="ac">تكييف</li><li data-i18n="bath">حمّام خاص</li></ul>
+        <a class="btn" href="#book" data-i18n="btn_book">احجز</a></div>
     </article>
   </div>
 </div></section>
 
 <section class="dark" id="services"><div class="wrap">
-  <div class="title reveal"><small>الخدمات</small><h2>كل ما يحتاجه المسافر</h2><p>خدمات تريحك من لحظة وصولك إلى لحظة مغادرتك.</p></div>
+  <div class="title reveal"><small data-i18n="srv_small">الخدمات</small><h2 data-i18n="srv_h">كل ما يحتاجه المسافر</h2><p data-i18n="srv_p">خدمات تريحك من لحظة وصولك إلى لحظة مغادرتك.</p></div>
   <div class="feat">
-    <div class="f reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div><h3>استقبال دائم</h3><p>على مدار الساعة لتسجيل الدخول والمغادرة</p></div>
-    <div class="f reveal d1"><div class="ic"><svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg></div><h3>النقل من وإلى المطار</h3><p>عند الطلب، يُحجز مسبقًا</p></div>
-    <div class="f reveal d2"><div class="ic"><svg viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg></div><h3>مطعم ومشروبات</h3><p>وجبات خفيفة ومشروبات ساخنة وباردة</p></div>
-    <div class="f reveal d3"><div class="ic"><svg viewBox="0 0 24 24"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg></div><h3>إنترنت</h3><p>في الغرف والمناطق المشتركة</p></div>
-    <div class="f reveal d1"><div class="ic"><svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg></div><h3>مواقف سيارات</h3><p>لضيوف الفندق</p></div>
-    <div class="f reveal d2"><div class="ic"><svg viewBox="0 0 24 24"><path d="M22 11h-4.17l3.24-3.24-1.41-1.42L15 11h-2V9l4.66-4.66-1.42-1.41L13 6.17V2h-2v4.17L7.76 2.93 6.34 4.34 11 9v2H9L4.34 6.34 2.93 7.76 6.17 11H2v2h4.17l-3.24 3.24 1.41 1.42L9 13h2v2l-4.66 4.66 1.42 1.41L11 17.83V22h2v-4.17l3.24 3.24 1.42-1.41L13 15v-2h2l4.66 4.66 1.41-1.42L17.83 13H22z"/></svg></div><h3>تكييف</h3><p>في جميع الغرف</p></div>
+    <div class="f reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div><h3 data-i18n="s1">استقبال دائم</h3><p data-i18n="s1_d">على مدار الساعة لتسجيل الدخول والمغادرة</p></div>
+    <div class="f reveal d1"><div class="ic"><svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg></div><h3 data-i18n="s2">النقل من وإلى المطار</h3><p data-i18n="s2_d">عند الطلب، يُحجز مسبقًا</p></div>
+    <div class="f reveal d2"><div class="ic"><svg viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg></div><h3 data-i18n="s3">مطعم ومشروبات</h3><p data-i18n="s3_d">وجبات خفيفة ومشروبات ساخنة وباردة</p></div>
+    <div class="f reveal d3"><div class="ic"><svg viewBox="0 0 24 24"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg></div><h3 data-i18n="s4">إنترنت</h3><p data-i18n="s4_d">في الغرف والمناطق المشتركة</p></div>
+    <div class="f reveal d1"><div class="ic"><svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg></div><h3 data-i18n="s5">مواقف سيارات</h3><p data-i18n="s5_d">لضيوف الفندق</p></div>
+    <div class="f reveal d2"><div class="ic"><svg viewBox="0 0 24 24"><path d="M22 11h-4.17l3.24-3.24-1.41-1.42L15 11h-2V9l4.66-4.66-1.42-1.41L13 6.17V2h-2v4.17L7.76 2.93 6.34 4.34 11 9v2H9L4.34 6.34 2.93 7.76 6.17 11H2v2h4.17l-3.24 3.24 1.41 1.42L9 13h2v2l-4.66 4.66 1.42 1.41L11 17.83V22h2v-4.17l3.24 3.24 1.42-1.41L13 15v-2h2l4.66 4.66 1.41-1.42L17.83 13H22z"/></svg></div><h3 data-i18n="s6">تكييف</h3><p data-i18n="s6_d">في جميع الغرف</p></div>
   </div>
 </div></section>
 
 <section id="contact"><div class="wrap">
-  <div class="title reveal"><small>تواصل معنا</small><h2>نسعد بخدمتك</h2><p>للحجز والاستفسار تواصل معنا بإحدى الطرق التالية.</p></div>
+  <div class="title reveal"><small data-i18n="ct_small">تواصل معنا</small><h2 data-i18n="ct_h">نسعد بخدمتك</h2><p data-i18n="ct_p">للحجز والاستفسار تواصل معنا بإحدى الطرق التالية.</p></div>
   <div class="contact">
-    <div class="c reveal"><b>الهاتف</b><span id="c-phone">سيُضاف قريبًا</span></div>
-    <div class="c reveal d1"><b>واتساب</b><span id="c-wa">سيُضاف قريبًا</span></div>
-    <div class="c reveal d2"><b>العنوان</b><span id="c-addr">حي المطار</span></div>
+    <div class="c reveal"><b data-i18n="ct_phone">الهاتف</b><span id="c-phone" dir="ltr">—</span></div>
+    <div class="c reveal d1"><b>WhatsApp</b><span id="c-wa" dir="ltr">—</span></div>
+    <div class="c reveal d2"><b data-i18n="ct_addr">العنوان</b><span id="c-addr">—</span></div>
   </div>
 </div></section>
 
-<footer>© <span id="yr"></span> فندق حي المطار السياحي — جميع الحقوق محفوظة</footer>
+<footer>© <span id="yr"></span> <span data-i18n="brand">فندق حي المطار السياحي</span> — <span data-i18n="rights">جميع الحقوق محفوظة</span></footer>
 
-<a class="wa" id="wa" href="#" target="_blank" rel="noopener" aria-label="واتساب"><svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.17c-.25.69-1.45 1.32-2 1.37-.51.05-.99.24-3.33-.69-2.82-1.11-4.6-4-4.74-4.18-.14-.18-1.13-1.5-1.13-2.86 0-1.37.72-2.04.97-2.32.25-.28.55-.35.73-.35h.52c.17 0 .39-.06.6.46.22.53.75 1.83.82 1.96.07.14.11.3.02.48-.09.18-.14.3-.27.46-.14.16-.29.35-.41.47-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.19.69-.8.88-1.08.18-.28.37-.23.62-.14.25.09 1.6.75 1.88.89.28.14.46.21.53.32.07.12.07.67-.18 1.36z"/></svg></a>
+<a class="wa" id="wa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.17c-.25.69-1.45 1.32-2 1.37-.51.05-.99.24-3.33-.69-2.82-1.11-4.6-4-4.74-4.18-.14-.18-1.13-1.5-1.13-2.86 0-1.37.72-2.04.97-2.32.25-.28.55-.35.73-.35h.52c.17 0 .39-.06.6.46.22.53.75 1.83.82 1.96.07.14.11.3.02.48-.09.18-.14.3-.27.46-.14.16-.29.35-.41.47-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.19.69-.8.88-1.08.18-.28.37-.23.62-.14.25.09 1.6.75 1.88.89.28.14.46.21.53.32.07.12.07.67-.18 1.36z"/></svg></a>
 
 <script>
 document.documentElement.classList.add("js");
 
-/* ===== إعدادات الفندق: عدّل هنا ===== */
+/* ===== إعدادات الفندق: عدّل هنا | Hotel settings: edit here ===== */
 var HOTEL = {
-  phone: "",       // مثال: "+249 9XX XXX XXX"
-  whatsapp: "",    // بالصيغة الدولية بدون +  مثال: "2499XXXXXXXX"
-  address: "حي المطار، الخرطوم"
+  phone: "",            // مثال: "+249 9XX XXX XXX"
+  whatsapp: "",         // بالصيغة الدولية بدون +  مثال: "2499XXXXXXXX"
+  address_ar: "حي المطار، الخرطوم",
+  address_en: "Airport District, Khartoum"
 };
 
+/* ===== النصوص بالعربي والإنجليزي | Translations ===== */
+var T = {
+  ar: {
+    title:"فندق حي المطار السياحي", brand:"فندق حي المطار السياحي",
+    h1:"فندق حي المطار السياحي",
+    nav_rooms:"الغرف", nav_services:"الخدمات", nav_contact:"تواصل معنا", nav_book:"احجز الآن",
+    badge:"أهلاً بك في ضيافتنا", lead:"إقامة مريحة قريبة من المطار، لراحة المسافر وهدوء الضيف.",
+    book_title:"احجز غرفتك", book_sub:"املأ البيانات وسنؤكد لك الحجز في أقرب وقت.",
+    lbl_name:"الاسم", ph_name:"اسمك الكريم", lbl_in:"الوصول", lbl_out:"المغادرة", lbl_room:"نوع الغرفة", lbl_guests:"الأشخاص", btn_book:"احجز",
+    rooms_small:"الإقامة", rooms_h:"غرفنا", rooms_p:"ثلاثة خيارات للإقامة، لرحلة قصيرة أو إقامة أطول.",
+    r1:"غرفة فردية", r1_who:"لشخص واحد", r1_d:"غرفة هادئة ومرتبة لمن يسافر وحده أو يمرّ بالمدينة في عمل.", r1_a:"سرير مفرد",
+    r2:"غرفة مزدوجة", r2_who:"لشخصين", r2_d:"مساحة أوسع لشخصين، بسرير مزدوج أو سريرين منفصلين.", r2_a:"سرير مزدوج أو سريران",
+    r3:"جناح عائلي", r3_who:"للعائلات والمجموعات", r3_d:"غرفة نوم وصالة صغيرة تكفي العائلة وتحفظ خصوصيتها.", r3_a:"غرفة نوم وصالة",
+    ac:"تكييف", bath:"حمّام خاص",
+    srv_small:"الخدمات", srv_h:"كل ما يحتاجه المسافر", srv_p:"خدمات تريحك من لحظة وصولك إلى لحظة مغادرتك.",
+    s1:"استقبال دائم", s1_d:"على مدار الساعة لتسجيل الدخول والمغادرة",
+    s2:"النقل من وإلى المطار", s2_d:"عند الطلب، يُحجز مسبقًا",
+    s3:"مطعم ومشروبات", s3_d:"وجبات خفيفة ومشروبات ساخنة وباردة",
+    s4:"إنترنت", s4_d:"في الغرف والمناطق المشتركة",
+    s5:"مواقف سيارات", s5_d:"لضيوف الفندق",
+    s6:"تكييف", s6_d:"في جميع الغرف",
+    ct_small:"تواصل معنا", ct_h:"نسعد بخدمتك", ct_p:"للحجز والاستفسار تواصل معنا بإحدى الطرق التالية.",
+    ct_phone:"الهاتف", ct_addr:"العنوان", soon:"سيُضاف قريبًا", rights:"جميع الحقوق محفوظة",
+    m_fill:"اكتب الاسم وتاريخ الوصول وتاريخ المغادرة ثم اضغط احجز.",
+    m_dates:"تاريخ المغادرة لازم يكون بعد تاريخ الوصول.",
+    m_open:"جارٍ فتح واتساب لإرسال طلبك…",
+    m_ready:"تم تجهيز طلبك. أرسل هذه التفاصيل للفندق:",
+    q_title:"طلب حجز — فندق حي المطار السياحي", q_name:"الاسم", q_room:"نوع الغرفة", q_guests:"عدد الأشخاص", q_in:"الوصول", q_out:"المغادرة",
+    btn:"EN"
+  },
+  en: {
+    title:"Airport District Tourist Hotel", brand:"Airport District Tourist Hotel",
+    h1:"Airport District Tourist Hotel",
+    nav_rooms:"Rooms", nav_services:"Services", nav_contact:"Contact", nav_book:"Book now",
+    badge:"Welcome to our hotel", lead:"A comfortable stay close to the airport, for restful travelers and quiet nights.",
+    book_title:"Book your room", book_sub:"Fill in your details and we will confirm your booking shortly.",
+    lbl_name:"Name", ph_name:"Your full name", lbl_in:"Check-in", lbl_out:"Check-out", lbl_room:"Room type", lbl_guests:"Guests", btn_book:"Book",
+    rooms_small:"Accommodation", rooms_h:"Our rooms", rooms_p:"Three room types, for a short stopover or a longer stay.",
+    r1:"Single room", r1_who:"For one guest", r1_d:"A quiet, tidy room for travelers on their own or in town for work.", r1_a:"Single bed",
+    r2:"Double room", r2_who:"For two guests", r2_d:"More space for two, with a double bed or two separate beds.", r2_a:"Double bed or two beds",
+    r3:"Family suite", r3_who:"For families and groups", r3_d:"A bedroom and a small lounge, with room for the whole family.", r3_a:"Bedroom and lounge",
+    ac:"Air conditioning", bath:"Private bathroom",
+    srv_small:"Services", srv_h:"Everything a traveler needs", srv_p:"Services to make your stay easy from arrival to departure.",
+    s1:"24-hour reception", s1_d:"Check-in and check-out at any hour",
+    s2:"Airport transfer", s2_d:"On request, booked in advance",
+    s3:"Restaurant and drinks", s3_d:"Light meals and hot and cold drinks",
+    s4:"Internet", s4_d:"In the rooms and common areas",
+    s5:"Car parking", s5_d:"For hotel guests",
+    s6:"Air conditioning", s6_d:"In all rooms",
+    ct_small:"Contact us", ct_h:"We are happy to help", ct_p:"For bookings and questions, reach us in any of these ways.",
+    ct_phone:"Phone", ct_addr:"Address", soon:"Coming soon", rights:"All rights reserved",
+    m_fill:"Enter your name, check-in date and check-out date, then press Book.",
+    m_dates:"The check-out date must be after the check-in date.",
+    m_open:"Opening WhatsApp to send your request…",
+    m_ready:"Your request is ready. Send these details to the hotel:",
+    q_title:"Booking request — Airport District Tourist Hotel", q_name:"Name", q_room:"Room type", q_guests:"Guests", q_in:"Check-in", q_out:"Check-out",
+    btn:"عربي"
+  }
+};
+
+var lang = "ar";
+try { var saved = localStorage.getItem("hotel_lang"); if (saved === "en" || saved === "ar") lang = saved; } catch (e) {}
+
+function setHeading(text) {
+  var h = document.getElementById("h1");
+  h.innerHTML = "";
+  text.split(" ").forEach(function (w) {
+    var s = document.createElement("span"); s.className = "w"; s.textContent = w;
+    h.appendChild(s); h.appendChild(document.createTextNode(" "));
+  });
+}
+
+function setContact() {
+  var d = T[lang];
+  document.getElementById("c-phone").textContent = HOTEL.phone || d.soon;
+  document.getElementById("c-wa").textContent = HOTEL.whatsapp ? "+" + HOTEL.whatsapp : d.soon;
+  document.getElementById("c-addr").textContent = lang === "ar" ? HOTEL.address_ar : HOTEL.address_en;
+}
+
+function applyLang(l, first) {
+  lang = l; var d = T[l], html = document.documentElement;
+  html.lang = l; html.dir = (l === "ar") ? "rtl" : "ltr";
+  document.title = d.title;
+  document.querySelectorAll("[data-i18n]").forEach(function (el) { var k = el.getAttribute("data-i18n"); if (d[k] != null) el.textContent = d[k]; });
+  document.querySelectorAll("[data-ph]").forEach(function (el) { el.placeholder = d[el.getAttribute("data-ph")]; });
+  document.getElementById("langBtn").textContent = d.btn;
+  setHeading(d.h1); setContact();
+  var r = document.getElementById("result"); r.className = ""; r.textContent = "";
+  if (!first) { try { localStorage.setItem("hotel_lang", l); } catch (e) {} }
+}
+
 document.getElementById("yr").textContent = new Date().getFullYear();
-if (HOTEL.phone) document.getElementById("c-phone").textContent = HOTEL.phone;
-if (HOTEL.address) document.getElementById("c-addr").textContent = HOTEL.address;
+document.getElementById("langBtn").addEventListener("click", function () { applyLang(lang === "ar" ? "en" : "ar"); });
+
 if (HOTEL.whatsapp) {
-  document.getElementById("c-wa").textContent = "+" + HOTEL.whatsapp;
   var wa = document.getElementById("wa"); wa.href = "https://wa.me/" + HOTEL.whatsapp; wa.classList.add("on");
 }
+applyLang(lang, true);
 
-/* ===== الفيديو: يحاول التشغيل، وإن فشل تبقى الخلفية المتحركة ===== */
+/* ===== الفيديو | Background video ===== */
 var v = document.getElementById("bg");
-v.muted = true; v.defaultMuted = true; v.setAttribute("muted","");
-/* موبايل بالطول: لو عندك فيديو عمودي باسم video-mobile.mp4 يُستخدم تلقائياً، وإلا يُستخدم video.mp4 */
+v.muted = true; v.defaultMuted = true; v.setAttribute("muted", "");
+function tryPlay() { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+
+/* موبايل بالطول: لو عندك فيديو عمودي باسم video-mobile.mp4 يُستخدم، وإلا video.mp4
+   Portrait phones: uses video-mobile.mp4 if it exists, otherwise video.mp4 */
+var triedMobile = false;
 if (window.innerWidth < 760 && window.innerHeight > window.innerWidth) {
-  var mobileTried = false;
-  v.addEventListener("error", function fb(){
-    if (!mobileTried) return;
-    mobileTried = false; v.removeEventListener("error", fb); v.src = "video.mp4"; v.load(); tryPlay();
-  });
-  mobileTried = true; v.src = "video-mobile.mp4"; v.load();
+  triedMobile = true; v.src = "video-mobile.mp4"; v.load();
 }
-function tryPlay(){ var p = v.play(); if (p && p.catch) p.catch(function(){}); }
+v.addEventListener("error", function () {
+  if (triedMobile) { triedMobile = false; v.src = "video.mp4"; v.load(); tryPlay(); }
+  else { v.style.display = "none"; }   /* تبقى الخلفية المتحركة */
+});
 tryPlay();
-v.addEventListener("error", function(){ if (v.getAttribute("src") === "video.mp4") v.style.display = "none"; });
-document.addEventListener("touchstart", tryPlay, {once:true});
-document.addEventListener("visibilitychange", function(){ if (!document.hidden) tryPlay(); });
-document.addEventListener("click", tryPlay, {once:true});
+document.addEventListener("touchstart", tryPlay, { once: true });
+document.addEventListener("click", tryPlay, { once: true });
+document.addEventListener("visibilitychange", function () { if (!document.hidden) tryPlay(); });
 
-/* ===== القائمة تتغير عند النزول ===== */
+/* ===== القائمة | Nav on scroll ===== */
 var nav = document.getElementById("nav");
-function onScroll(){ nav.classList.toggle("scrolled", window.scrollY > 60); }
-window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+function onScroll() { nav.classList.toggle("scrolled", window.scrollY > 60); }
+window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
 
-/* ===== ظهور العناصر عند النزول ===== */
+/* ===== ظهور العناصر | Reveal on scroll ===== */
 var items = document.querySelectorAll(".reveal");
 if ("IntersectionObserver" in window) {
-  var io = new IntersectionObserver(function(es){
-    es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
-  }, {threshold:.15});
-  items.forEach(function(el){ io.observe(el); });
-} else { items.forEach(function(el){ el.classList.add("in"); }); }
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { threshold: .12 });
+  items.forEach(function (el) { io.observe(el); });
+} else { items.forEach(function (el) { el.classList.add("in"); }); }
 
-/* ===== الحجز ===== */
+/* ===== الحجز | Booking ===== */
 var f = document.getElementById("bookForm"), res = document.getElementById("result");
-var today = new Date().toISOString().slice(0,10);
+var today = new Date().toISOString().slice(0, 10);
 document.getElementById("in").min = today; document.getElementById("out").min = today;
-f.addEventListener("submit", function(e){
+f.addEventListener("submit", function (e) {
   e.preventDefault();
+  var d = T[lang];
   var name = document.getElementById("name").value.trim(),
       din = document.getElementById("in").value, dout = document.getElementById("out").value;
   res.className = "show";
-  if (!name || !din || !dout) { res.textContent = "اكتب الاسم وتاريخ الوصول وتاريخ المغادرة ثم اضغط احجز."; return; }
-  if (dout <= din) { res.textContent = "تاريخ المغادرة لازم يكون بعد تاريخ الوصول."; return; }
-  var msg = "طلب حجز — فندق حي المطار السياحي\nالاسم: " + name +
-    "\nنوع الغرفة: " + document.getElementById("room").value +
-    "\nعدد الأشخاص: " + document.getElementById("guests").value +
-    "\nالوصول: " + din + "\nالمغادرة: " + dout;
+  if (!name || !din || !dout) { res.textContent = d.m_fill; return; }
+  if (dout <= din) { res.textContent = d.m_dates; return; }
+  var sel = document.getElementById("room");
+  var msg = d.q_title + "\n" + d.q_name + ": " + name +
+    "\n" + d.q_room + ": " + sel.options[sel.selectedIndex].text +
+    "\n" + d.q_guests + ": " + document.getElementById("guests").value +
+    "\n" + d.q_in + ": " + din + "\n" + d.q_out + ": " + dout;
   if (HOTEL.whatsapp) {
-    res.textContent = "جارٍ فتح واتساب لإرسال طلبك…";
+    res.textContent = d.m_open;
     window.open("https://wa.me/" + HOTEL.whatsapp + "?text=" + encodeURIComponent(msg), "_blank");
   } else {
-    res.textContent = "تم تجهيز طلبك. أرسل هذه التفاصيل للفندق:\n\n" + msg;
+    res.textContent = d.m_ready + "\n\n" + msg;
   }
 });
 </script>
